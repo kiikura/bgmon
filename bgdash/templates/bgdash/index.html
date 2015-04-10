@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BGdASH</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Oswald', cursive;
+            background-color: #222222;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .sp-text {
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.95);
+        }
+
+        .nodes li {
+            display: inline-block;
+            /*width: 21%;*/
+
+            margin: 2%;
+            text-align: center;
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.95);
+        }
+
+        .nodes div[data-type="img"] {
+            border: 7px solid;
+            border-radius: 100%;
+            height: 200px;
+            overflow: hidden;
+            width: 200px;
+            margin: 0 auto;
+            z-index: 3;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            border: 10px solid rgba(127, 255, 255, 0.25);
+            text-align: center;
+            cursor: default;
+        }
+        /*
+
+*/
+
+        .nodes li div[data-type="img"]:hover {
+            border-color: rgba(255, 0, 0, 0.8);
+            box-shadow: 0px 0px 40px rgba(255, 0, 0, 0.8);
+        }
+
+        .nodes div>.blue {
+            border-color: #007aff;
+            background-color: rgba(0, 100, 180, 0.615686);
+        }
+
+        .nodes div>.green {
+            border-color: #53d769;
+            background-color: rgba(0, 180, 100, 0.615686);
+        }
+
+        .nodes div span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .halo {
+            position: absolute;
+            background: #f13d63;
+/*
+            height: 70px;
+            width: 400px;
+*/
+            margin-bottom: 20px;
+        }
+
+        .halo:after {
+            content: '';
+            position: absolute;
+            border-top: 20px solid #f13d63;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            bottom: -20px;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <!--
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+-->
+                </ul>
+            </nav>
+            <h3 class="text-muted">BGdASH</h3>
+        </div>
+
+
+        <!--
+      <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+      </div>
+-->
+
+        <div class="row">
+            <ul class="nodes">
+                <li class="node">
+                    <div>
+                        <div data-type="img" class="blue">
+                            <h3>GUFUE</h3>
+                            <div class="buildid">#133</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="node">
+                    <div>
+                        <div data-type="img" class="green">
+                            <h3>ZAKUEEN</h3>
+                            <div class="buildid">#135</div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <div class="halo"><span class="sp-text">2015.1.10 10:10</span></div>
+    </div>
+
+
+
+
+
+    <div class="container-fluid">
+        <div id="page-login" class="row">
+            <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="box">
+                    <div class="panel">
+                        <div class="text-center">
+                            <h3 class="page-header">BGdASH Login Page</h3>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Username</label>
+                            <input type="text" class="form-control" name="username" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                        <div class="text-center">
+                            <a href="../index.html" class="btn btn-primary">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
+        hoge
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
