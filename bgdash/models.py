@@ -1,6 +1,6 @@
 from django.db import models
 
-
+import bg
 
 class Site(models.Model):
 
@@ -31,7 +31,7 @@ class Lane(models.Model):
         return self.name
 
     def active(self):
-        return False
+        return bg.is_active_lane(self)
 
     def deployment(self):
         return {}

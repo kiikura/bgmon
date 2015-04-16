@@ -1,4 +1,22 @@
+import subprocess
 
+def is_active_lane(lane):
+    site_ip = lane.site.ipaddress
+    lane_ip = lane.ipaddress
+    return is_same_mac(site_ip, lane_ip)
+
+def is_same_mac(site_ip, lane_ip):
+    site_mac = arp(site_ip)
+    lane_mac = arp(lane_ip)
+    return site_mac == lane_mac
+
+def arp(ip):
+    res = subprocess.check_output(["ip", "neigh"])
+    for l in res.splitlines():
+        cols = l.split();
+        if cols[0] == ip:
+            return cols[4]
+    return None
 
 site1 = {
     id: 1,
