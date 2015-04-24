@@ -89,6 +89,33 @@
             bottom: -20px;
             left: 50%;
         }
+        
+        
+        @-webkit-keyframes 'rador' {
+        
+	  0%   { 
+	  	opacity: 0.2;
+	  	-webkit-transform: translate(100px,100px) rotate(0deg);
+	  }
+	  50% {
+	  	opacity: 1;
+	  }
+	  100% { 
+	  	opacity: 0.2;
+	  	-webkit-transform: translate(100px,100px) rotate(360deg);
+	  }
+	}
+	
+	.anime-rador {
+	  transform-origin:left top;
+	  -webkit-animation-name: 'rador';
+	  -webkit-animation-duration: 4s;
+	  -webkit-animation-iteration-count: infinite;
+	  -webkit-animation-timing-function: linear;
+	
+	}
+	        
+        
     </style>
 </head>
 
@@ -128,10 +155,10 @@
                 </li>
                 <li class="node">
                     <div>
-                    	<div class="indicator" style="position:absolute;">
-                    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-       <path d="M 0 0 L 100 100 z" stroke="#FF0000" stroke-width="1"/>
-       </svg>
+                    	<div class="indicator anime-rador" style="position:absolute;">
+                    	  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+		       	    <path d="M 0 0 L 100 100 z" stroke="#FFFF00" stroke-width="2"/>
+		          </svg>
        			</div>
                         <div data-type="img" class="green">
                             <h3>ZAKUEEN</h3>

@@ -6,7 +6,7 @@ import models
 
 
 class LaneSerializer(serializers.ModelSerializer):
-
+    active = serializers.ReadOnlyField()
 
     class Meta:
         model = models.Lane

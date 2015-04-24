@@ -34,7 +34,7 @@ class Lane(models.Model):
         return bg.is_active_lane(self)
 
     def deployment(self):
-        return {}
+        return bg.get_deployment(self)
 
     class Meta:
         ordering = ('id',)
