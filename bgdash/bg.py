@@ -17,28 +17,28 @@ def is_same_mac(site_ip, lane_ip):
     return site_mac == lane_mac and site_mac != None
 
 def arp(ip):
-  try:
-    p=subprocess.Popen(["ip", "neigh"],stdout=subprocess.PIPE)
-    out, err = p.communicate()
-    lines = out.splitlines()
-    for l in [x for x in lines if len(x) > 3]:
-      record = l.split()
-      if record[0] == ip:
-	return record[4]
-  except OSError as (errno, strerror):
-    logger.error("can not resolve ip. %s: %s", (errno, strerror))
-  return None
+    try:
+        p = subprocess.Popen(["ip", "neigh"], stdout=subprocess.PIPE)
+        out, err = p.communicate()
+        lines = out.splitlines()
+        for l in [x for x in lines if len(x) > 3]:
+            record = l.split()
+            if record[0] == ip:
+                return record[4]
+    except OSError as e:
+        logger.error("can not resolve IP address. %s : %s", e.errno, e.strerror)
+    return None
 
 
 
 URL_TMPL = u"%(accessurl)s/static/deploy.json"
 
 def get_deployment(lane):
-  url = URL_TMPL % vars(lane)
-  res = urllib2.urlopen(url).read()
-  deployment = json.loads(res)
-  return deployment
+    url = URL_TMPL % vars(lane)
+    res = urllib2.urlopen(url).read()
+    deployment = json.loads(res)
+    return deployment
 
 def get_persistent(lane):
-  return {}
+    return {}
 
