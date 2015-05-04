@@ -24,9 +24,11 @@ class SiteSerializer(serializers.ModelSerializer):
     lanes = LaneSerializer(many=True, read_only=True)
     class Meta:
         model = models.Site
-        fields = ('id', 'name', 'lanes', 'created')
+        fields = ('id', 'name', 'hostname', 'accessurl', 'lanes', 'builds', 'created', 'modified')
 
-
+class ListSiteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Site
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

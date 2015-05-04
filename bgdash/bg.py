@@ -34,10 +34,13 @@ def arp(ip):
 URL_TMPL = u"%(accessurl)s/static/deploy.json"
 
 def get_deployment(lane):
-    url = URL_TMPL % vars(lane)
-    res = urllib2.urlopen(url).read()
-    deployment = json.loads(res)
-    return deployment
+    try:
+        url = URL_TMPL % vars(lane)
+        res = urllib2.urlopen(url, None, 5).read()
+        deployment = json.loads(res)
+        return deployment
+    except:
+        return "#ERROR"
 
 def get_persistent(lane):
     return {}

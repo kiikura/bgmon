@@ -38,3 +38,10 @@ class Lane(models.Model):
 
     class Meta:
         ordering = ('id',)
+
+class Build(models.Model):
+    site = models.ForeignKey(Site,related_name='builds')
+    name = models.CharField(max_length=100, blank=False, )
+    # http://deadlock.netbeans.org/hudson/job/trunk/lastCompletedBuild/api/json
+    # http://deadlock.netbeans.org/hudson/job/trunk/lastSuccessfulBuild/api/json
+    accessurl = models.CharField(max_length=128, blank=False, )
