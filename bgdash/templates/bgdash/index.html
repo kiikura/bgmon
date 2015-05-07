@@ -16,25 +16,118 @@
             margin: 0;
             overflow: hidden;
         }
-
+        
+		a,a:hover{
+        	color: rgba(255, 255, 255, 0.75);
+        }
+        a:visited,a:unvisited{ 
+        	color: rgba(255, 255, 255, 0.75);
+        }
+        
+        
+        .container { 
+          	max-width: none !important;
+  			width: 750px;
+        }
         .container .row {
             text-align: center;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.95);
         }
+
+		.btn-outline {
+		  -webkit-font-smoothing: antialiased;
+		  display: inline-block;
+		  vertical-align: middle;
+		  zoom: 1;
+		  color: #fff;
+		  border: 2px solid #fff;
+
+			margin: 5px auto;
+		  background: rgba(90, 90, 90, 0.15);
+		  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+		  
+		  
+		  -webkit-transition: all 0.2s linear;
+		  -moz-transition: all 0.2s linear;
+		  -ms-transition: all 0.2s linear;
+		  -o-transition: all 0.2s linear;
+		  transition: all 0.2s linear;
+		}
+
+		.menu { 
+			position: absolute;
+			right: 10px;
+			top: 50px;
+			width: 130px;
+		}
+		.menu .btn { 
+			width: 90%;
+		}
 
         .sp-text {
             color: rgba(255, 255, 255, 0.75);
             text-shadow: 0 0 15px rgba(0, 255, 255, 0.95);
         }
 
+
+
+		.site {
+        	display: inline-block;
+        	height: 50px;
+            width: 300px;
+            border-radius: 50px;
+            background-color: rgba(200, 200, 200, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            border: 10px solid rgba(127, 255, 255, 0.25);
+            
+            
+
+            vertical-align: middle;
+        }
+        
+        
+        .site.blue{ 
+        	border-color: #007aff;
+            background-color: rgba(0, 100, 180, 0.615686);
+        }
+        
+        .site.green{ 
+        	border-color: #53d769;
+            background-color: rgba(0, 180, 100, 0.615686);
+        }
+
+
+
+		.site>.cline {
+			position: absolute;
+			z-index: -1;
+			width: 50px;
+			border: 5px solid rgba(127, 255, 255, 0.25);
+			box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+			-webkit-transform: translate(110px, 50px) rotate(90deg);
+			display:none;
+		}
+		.site.blue>.cline{ 
+			border-color: #007aff;
+            background-color: rgba(0, 100, 180, 0.615686);
+            -webkit-transform: translate(60px, 50px) rotate(135deg);
+            display:block;
+		}
+		.site.green>.cline{ 
+			border-color: #53d769;
+            background-color: rgba(0, 180, 100, 0.615686);
+            -webkit-transform: translate(160px, 50px) rotate(45deg);
+            display:block;
+		}
+
+
         .node {
             display: inline-block;
             /*width: 21%;*/
 
             margin: 2%;
-            text-align: center;
             vertical-align: middle;
-            color: rgba(255, 255, 255, 0.75);
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.95);
         }
 
         .node div[data-type="img"] {
@@ -50,46 +143,71 @@
             text-align: center;
             cursor: default;
         }
-        /*
 
-*/
 
         .node div[data-type="img"]:hover {
             border-color: rgba(255, 0, 0, 0.8);
             box-shadow: 0px 0px 40px rgba(255, 0, 0, 0.8);
         }
 
-        .node div>.blue {
+        .node.blue div>div {
             border-color: #007aff;
             background-color: rgba(0, 100, 180, 0.615686);
         }
 
-        .node div>.green {
+        .node.green div>div {
             border-color: #53d769;
             background-color: rgba(0, 180, 100, 0.615686);
         }
-
-        .node div span {
-            vertical-align: middle;
-            display: inline-block;
-        }
+		.node div[data-type="img"]>h3{ 
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.node div[data-type="img"]>div{
+			
+		}
 
         .build {
-            displzy: inline-box;
-            height: 100px;
+            display: inline-block;
+            height: 80px;
             width: 300px;
-            background-color: aqua;
-            border-radius: 50px
+            border-radius: 5px;
+            background-color: rgba(200, 200, 200, 0.2);
+           	box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            
+            padding: 10px;
         }
+        .build .artifact { 
+        	text-align: left;
+        }
+        .build .artifact .timestamp { 
+        	font-size: 8px;
+        	margin-top: 3px;
+        }
+        
+        .build>.cline{ 
+        	position: absolute;
+			z-index: -2;
+			width: 50px;
+			border: 2px solid rgba(255,255,255,0.8);
+			
+			box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+			
+			transform-origin: -3px 1px;
+			-webkit-transform: translate(135px, -10px) rotate(-90deg);
+        }
+        .build.blue>.cline{ 
+			-webkit-transform: translate(110px, -10px) rotate(-135deg);
+        }
+        .build.green>.cline{ 
+			-webkit-transform: translate(160px, -10px) rotate(-45deg);
+        }
+        
 
         .halo {
             position: absolute;
             background: #f13d63;
-            /*
-            height: 70px;
-            width: 400px;
-*/
-
             margin-bottom: 20px;
         }
 
@@ -102,6 +220,15 @@
             bottom: -20px;
             left: 50%;
         }
+
+
+		.indicator { 
+			position:absolute;
+			padding:0px;
+			border:0px;
+			margin:0px;
+			line-height:0px;
+		}
 
         @-webkit-keyframes 'rador' {
             0% {
@@ -143,64 +270,69 @@
         </div>
 
 
-        <!--
-      <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-      </div>
--->
-
-        <div class="row" style="text-align:center">
-
-            <div class="node">
+		<div id="ngSite" class="row">
+			<div class="site">
+				<div class="cline"></div>
+				<a href="" target="_blank"></a>
+			</div>
+		</div>
+        <div id="ngLane" class="row">
+            <div class="node blue">
                 <div>
-                    <div data-type="img" class="blue">
-                        <h3>GUFUE</h3>
-                        <div class="buildid">#133</div>
+                    <div data-type="img">
+                        <h3></h3>
+                        <div class="ipaddress">....</div>
+                        <div class="buildid">....</div>
+                        <div class="deploydate">....</div>
+                        <div class="deployhash">....</div>
                     </div>
                 </div>
             </div>
-            <div class="node">
+            <div class="node green">
                 <div>
-                    <div class="indicator anime-rador" style="position:absolute;">
-                        <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 0 0 L 100 100 z" stroke="#FFFF00" stroke-width="2" />
-                        </svg>
+                    <!--
+                    <div class="indicator anime-rador">
+                    	<svg width="100" xmlns="http://www.w3.org/2000/svg">
+                    		<path d="M 0 0 L 100 0 z" stroke="#FFFF00" stroke-width="2" />
+                    	</svg>
+                    </div>-->
+                    <div data-type="img">
+                        <h3></h3>
+                        <div class="ipaddress">....</div>
+                        <div class="buildid"></div>
+                        <div class="deploydate"></div>
+                        <div class="deployhash"></div>
                     </div>
-                    <div data-type="img" class="green">
-                        <h3>ZAKUEEN</h3>
-                        <div class="buildid">#135</div>
-                    </div>
-
-
                 </div>
             </div>
 
         </div>
-
-        <div class="row">
+        <div id="ngBuild" class="row">
             <div class="build">
-
+            	<div class="cline"></div>
             </div>
         </div>
 
+		
 
-        <div class="halo"><span class="sp-text">2015.1.10 10:10</span>
-        </div>
     </div>
 
-    <div class="well">
-        hoge
-        <button id="btnLogin">login</button>
+    <div class="menu" >       
+        <button id="btnSwitch" class="btn btn-outline">Switch Lane</button>
+        <button id="btnDeploy" class="btn btn-outline">Deploy</button>
+        <button id="btnMigrate" class="btn btn-outline">Migrate</button>
+        <button id="btnRefresh" class="btn btn-outline">Refresh</button>
+        <button id="btnLogout" class="btn btn-outline">LOGOUT</button>
     </div>
 
-    <div class="modal fade" id="p10-login" tabindex="-1" role="dialog" aria-labelledby="p10-login-title" aria-hidden="true">
+    <div class="modal fade" id="p10-login" tabindex="-1" role="dialog" aria-labelledby="p10-login-title" aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
+                	<!--
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span>
                     </button>
+                    -->
                     <h4 class="modal-title" id="p10-login-title">Login</h4>
                 </div>
                 <div class="modal-body">
@@ -214,7 +346,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                	<!--
                     <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                    -->
                     <button type="button" class="btn btn-primary">Login</button>
                 </div>
             </div>
@@ -224,32 +358,7 @@
     </div>
     <!-- /.modal -->
 
-    <!--
-    <div class="container-fluid">
-        <div id="page-login" class="row">
-            <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <div class="box">
-                    <div class="panel">
-                        <div class="text-center">
-                            <h3 class="page-header">BGdASH Login Page</h3>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Username</label>
-                            <input type="text" class="form-control" name="username" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Password</label>
-                            <input type="password" class="form-control" name="password" />
-                        </div>
-                        <div class="text-center">
-                            <a href="../index.html" class="btn btn-primary">Sign in</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  -->
+
 
 
 
@@ -272,6 +381,7 @@
         };
         function logout(){
             localStorage.removeItem("TOKEN");
+            //TODO: LOGOUTイベント
         };
 
         function main() {
@@ -290,6 +400,9 @@
             get loginstate(){
                 var token = localStorage.getItem("TOKEN");
                 return token !== null;
+            },
+            get data(){ 
+                return this._current;
             }
         };
         bgdash.ajax = function(opts){
@@ -300,10 +413,29 @@
             };
             return $.ajax($.extend({}, base, opts));
         };
+        
+        bgdash.loadData = function(siteId){
+			var self = this;
+			siteId = siteId || 1;
+			return self.ajax({
+				url: "/bgdash/api/sites/"+siteId
+			});
+        };
+        bgdash.switchLane = function(siteId, activeLaneIds){
+			var self = this;
+			return self.ajax({
+				url: "/bgdash/api/sites/"+siteId+"/switch/"+activeLaneIds.join(",")+"/",
+				method: "post",
+			});
+        };
 
 
         bgdash.initialize = function(){
-            $("#btnLogin").on("click", $.proxy(bgdash.showLoginModal, this));
+        	$("#btnSwitch").on("click", $.proxy(bgdash.switchHandler, this));
+            $("#btnDeploy").on("click", $.proxy(bgdash.deployHandler, this));
+            $("#btnMigrate").on("click", $.proxy(bgdash.migrateHandler, this));
+            $("#btnRefresh").on("click", $.proxy(bgdash.refreshHandler, this));
+            $("#btnLogout").on("click", $.proxy(bgdash.logoutHandler, this));
         };
 
         bgdash.showLoginModal = function(){
@@ -323,6 +455,54 @@
 
             });
         };
+        bgdash.switchHandler = function(){ 
+        	var site = this.data;
+        	var ft = this.detectFromTo(site);
+        	var f = ft[0];
+        	var t = ft[1];
+        	var targets = [];
+        	var names = [];
+        	$.each(t, function(idx, lane){
+        		targets.push(lane.id);
+        		names.push(lane.name);
+        	});
+        	var prefix = "Caution! ";
+        	var msg = "Do you want to activate the " + names.join(",") +".";
+        	this.speech(prefix + msg);
+        	if(confirm(msg)){ 
+        		this.switchLane(site.id, targets);
+        	}
+        };
+        bgdash.deployHandler = function(){ 
+        	var ft = this.detectOneFromTo();
+        	var f = ft[0];
+        	var t = ft[1];
+        };
+		bgdash.migrateHandler = function(){ 
+        	var ft = this.detectOneFromTo();
+        	var f = ft[0];
+        	var t = ft[1];
+        };
+        bgdash.refreshHandler = function(){ 
+        	this.repaint();
+        };
+        bgdash.logoutHandler = function(){
+        	logout();
+        	this.startApp();
+        };
+
+		bgdash.speech = function(msg, lang){ 
+			lang = lang || "en-US";
+			if(true)return;
+			if(!speechSynthesis) return;
+			
+			var speech = new SpeechSynthesisUtterance(msg);
+			if(speechSynthesis.speaking){
+				speechSynthesis.cancel();
+			}
+			speechSynthesis.speak(speech);
+		};
+        
         bgdash.startApp = function(){
             if(this.loginstate){
                 this.repaint();
@@ -332,10 +512,178 @@
         };
 
         bgdash.repaint = function(){
-            this.loadData();
+        	var self = this;
+        	bgdash._current = null;
+            this.loadData()
+            .then(function(data){
+            	console.log("data loaded: %o", data);
+            	self.render(data);
+            	var d = $.Deferred();
+            	return d.resolve(data);
+            })
+            .done(function(data){
+            	bgdash._current = data; 
+            	SITE = data;
+            	console.log("repaint finish")
+            })
+            .fail(function(){
+            	alert("FAIL");
+            });
         };
-        bgdash.loadData = function(){
 
+        
+        bgdash.render = function(site){
+        	this.renderSite(site);
+        	this.renderLane(site);
+        	this.renderBuild(site);
+        };
+        
+        bgdash.clearSite = function(site){ 
+        	var el = $("#ngSite");
+        	var elSite = el.find(".site");
+        	elSite.removeClass("green")
+        		.removeClass("blue");
+        	var a = elSite.find("a");
+        	a.attr("href", "")
+        	 .text("");
+        };
+        bgdash.renderSite = function(site){
+        	this.clearSite();
+        	var el = $("#ngSite");
+        	var elSite = el.find(".site");
+        	var activeClass = this.findActiveLaneClass(site);
+        	elSite.addClass(activeClass);
+        	
+        	var a = $('<a></a>')
+        			.attr("target", "_blank")
+        			.attr("href", site.accessurl)
+        			.text(site.name);
+        	elSite.append(a);
+        };
+        
+        bgdash.clearLane = function(){
+        	var el = $("#ngLane");
+        	var nodes = el.find(".node");
+        	nodes.removeClass("blue")
+        		.removeClass("green")
+        		.find('div[data-type="img"]>*')
+        			.text("");
+        };
+        bgdash.renderLane = function(site){ 
+        	this.clearLane();
+        	var self = this;
+        	var el = $("#ngLane");
+        	var nodes = el.find(".node");
+        	
+        	$.each(nodes, function(idx, node){
+        		self.renderLaneNode(idx, node, site.lanes[idx]);
+        	});
+        };
+        bgdash.renderLaneNode = function(idx, node, lane){
+        	var self = this;
+        	var laneClass = self.lookupLaneClass(idx);
+        	var el = $(node);
+        	el.addClass(laneClass);
+        	
+        	var a = $('<a></a>')
+        			.attr("target", "_blank")
+        			.attr("href", lane.accessurl)
+        			.text(lane.name);
+        	
+        	el.find("h3")
+        		.append(a);
+        		
+        	el.find(".ipaddress")
+        		.text(lane.ipaddress);
+        	el.find(".buildid")
+        		.text(lane.deployment.branch + ": #"+lane.deployment.build_id);
+        	el.find(".deploydate")
+        		.text(lane.deployment.date);
+        	el.find(".deployhash")
+        		.text(lane.deployment.commit.substring(0,10) + "...");
+        	
+        };
+        
+        bgdash.clearBuild = function(){ 
+        	var el = $("#ngBuild");
+        	var elBuild = el.find(".build");
+        	elBuild.removeClass("green")
+        		.removeClass("blue");
+        	var artifacts = elBuild.find(".artifact");
+        	artifacts.remove();
+        };
+        bgdash.renderBuild = function(site){ 
+        	this.clearBuild();
+        	var el = $("#ngBuild");
+			var elBuild = el.find(".build");
+			var activeClass = this.findActiveLaneClass(site);
+			if(activeClass){ 
+				var revClass = activeClass === "green"?"blue":"green";
+				elBuild.addClass(revClass);
+			}
+			$.each(site.builds, function(idx, b){
+				console.log(b);
+				var na = $('<div class="artifact"><span class="t1"></span>: <a></a><div class="timestamp pull-right"></div></div>');
+				var buildno = b.artifact.displayName;
+				var url = b.artifact.url;
+				var builddate = new Date(b.artifact.timestamp);
+				
+				
+				na.find(".t1").text(b.name);
+				na.find("a")
+					.attr("target", "_blank")
+					.attr("href", url)
+					.text(buildno);
+				na.find(".timestamp")
+					.text(builddate);
+				elBuild.append(na);
+			});
+			
+        };
+        
+        bgdash.lookupLaneClass = function(idx){ 
+        	var cs = ["blue", "green"];
+        	return cs[(idx % 2)];
+        };
+        bgdash.findActiveLaneClass = function(site){ 
+        	var self = this;
+        	var result = false;
+        	result = site.lanes.some(function(l, idx){
+        		if(l.active){
+        			return self.lookupLaneClass(idx);
+        		}
+        	});
+        	return result === false ? "":result;
+        };
+        
+        bgdash.detectFromTo = function(site){ 
+        	site = site || this.data;
+        	var self = this;
+        	var act = [];
+        	var dea = [];
+        	$.each(site.lanes, function(idx, l){
+        		if(l.active){
+        			act.push(l);
+        		}else{ 
+        			dea.push(l);
+        		}
+        	});
+        	return [act,dea];
+        };
+        bgdash.detectOneFromTo = function(site){ 
+        	site = site || this.data;
+        	var fts = this.detectFromTo(site);
+        	var fs = fts[0];
+        	var ts = fts[1];
+        	var f=null,t=null;
+        	if(fs.length > 0){ 
+        	  f = fs[0];
+        	}
+        	if(ts.length > 0){ 
+        	  t = ts[0];
+        	}
+        	return [f,t];
+        	
         };
 
         $(document).ready(function(){
