@@ -12,16 +12,28 @@ class LaneSerializer(serializers.ModelSerializer):
         model = models.Lane
         fields = ("id",
                 "name",
-            "accessurl",
-            "hostname",
-            "ipaddress",
-            "active",
-            "deployment",
-            "created",
-            "modified",)
+                "accessurl",
+                "hostname",
+                "ipaddress",
+                "active",
+                "deployment",
+                "created",
+                "modified",)
+
+class BuildSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Build
+        fields = ("id",
+                "name",
+                "accessurl",
+                "artifact",
+                "created",
+                "modified",)
 
 class SiteSerializer(serializers.ModelSerializer):
     lanes = LaneSerializer(many=True, read_only=True)
+    builds = BuildSerializer(many=True, read_only=True)
+    
     class Meta:
         model = models.Site
         fields = ('id', 'name', 'hostname', 'accessurl', 'lanes', 'builds', 'created', 'modified')

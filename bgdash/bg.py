@@ -40,8 +40,22 @@ def get_deployment(lane):
         deployment = json.loads(res)
         return deployment
     except:
+        logger.error("can not get deployment. url=%s", url)
         return "#ERROR"
 
 def get_persistent(lane):
     return {}
+
+
+def get_artifact(build):
+    try:
+        url = build.accessurl
+        res = urllib2.urlopen(url, None, 5).read()
+        art = json.loads(res)
+        return art
+    except:
+        logger.error("can not get build artifacts. url=%s", url)
+        return "#ERROR"
+    
+
 
